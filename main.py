@@ -15,9 +15,10 @@ def ingresar():
         notaAux=float(input("Ingrese la nota final del estudiante: "))
         if notaAux>0 and notaAux<=100 and idAux>0 :
             estudianteAux=Estudiante(nombreAux,idAux,carreraAux,notaAux)
-            estudiantesList.add(estudianteAux)
+            estudiantesList.append(estudianteAux)
+            print("Agregado con exito")
         else:
-            print()
+            print("Nota y carné deben ser positivos")
     except ValueError:
         print("ERROR: Edad debe ser entero/Nota final debe ser un numero")
 def promedio():
@@ -31,7 +32,7 @@ def promedio():
 def buscar():
     if len(estudiantesList) > 0:
         existe=False
-        idAux=input("Ingrese el id del estudiante a buscar: ")
+        idAux=int(input("Ingrese el id del estudiante a buscar: "))
         for estudiante in estudiantesList:
             if estudiante.id == idAux:
                 estudianteAux=estudiante
@@ -68,4 +69,5 @@ while True:
             promedio()
         case "5":
             print("Saliendo...")
+            break
 
