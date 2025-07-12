@@ -1,3 +1,4 @@
+estudiantesList=[]
 class Estudiante:
     def __init__(self,nombre,id,carrera,nota):
         self.nombre = nombre
@@ -12,9 +13,11 @@ def ingresar():
         idAux=int(input("Ingrese el id del estudiante: "))
         carreraAux=input("Ingrese la carrera del estudiante: ")
         notaAux=float(input("Ingrese la nota final del estudiante: "))
-        estudianteAux=Estudiante(nombreAux,idAux,carreraAux,notaAux)
-        estudiantesList.add(estudianteAux)
-
+        if notaAux>0 and notaAux<=100 and idAux>0 :
+            estudianteAux=Estudiante(nombreAux,idAux,carreraAux,notaAux)
+            estudiantesList.add(estudianteAux)
+        else:
+            print()
     except ValueError:
         print("ERROR: Edad debe ser entero/Nota final debe ser un numero")
 def promedio():
@@ -45,4 +48,24 @@ def mostrarTodos():
             print("")
     else:
         print("No hay estudiantes en la lista")
+
+while True:
+    print("==MENU==")
+    print("1. Ingresar estudiante")
+    print("2. Mostrar estudiantes registrados")
+    print("3. Buscar estudiante")
+    print("4. Promedio general de estudiantes")
+    print("5. Salir")
+    opcion=input("Ingrese la opcion: ")
+    match opcion:
+        case "1":
+            ingresar()
+        case "2":
+            mostrarTodos()
+        case "3":
+            buscar()
+        case "4":
+            promedio()
+        case "5":
+            print("Saliendo...")
 
