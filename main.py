@@ -1,3 +1,4 @@
+estudiantesList=[]
 class Estudiante:
     def __init__(self,nombre,id,carrera,nota):
         self.nombre = nombre
