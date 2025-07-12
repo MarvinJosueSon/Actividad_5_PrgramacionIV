@@ -32,7 +32,7 @@ def promedio():
 def buscar():
     if len(estudiantesList) > 0:
         existe=False
-        idAux=int(input("Ingrese el id del estudiante a buscar : "))
+        idAux=int(input("Ingrese el id del estudiante a buscar: "))
         for estudiante in estudiantesList:
             if estudiante.id == idAux:
                 estudianteAux=estudiante
